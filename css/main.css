@@ -35,8 +35,19 @@ p{
 
 div.headerSection{
     background-color: #424341;
+    background-image: url("../img/Splash-Screen_Grid-pattern_Background.png");
+    min-height: 150px;
+    width: 100%;
+    padding-top: 35%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 95%;
 }
 
 div.navSection{
-    background-color:  #abaaa6;
+    background-color:  #ede5e2;
+    min-height: 50px;
+    position:static;
 }
