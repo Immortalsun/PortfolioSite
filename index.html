@@ -4,14 +4,17 @@
         <link type="text/css" rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
     </head>
-    <body>
+    <body onload="pageLoad()">
         <div class="w3-top w3-margin-botton">
             <div class="navSection w3-bar">
-                <p class="w3-left" style="padding-top: 10px; margin-left: 15px; margin-top: 0px;">Maashes Phillips</p>
-                <button class="navHeaderBtn w3-right">Contact</button>
-                <button class="navHeaderBtn w3-right">About</button>
-                <button class="navHeaderBtn w3-right">Projects</button>
+                <p class="w3-left" style="padding-top: 10px; margin-left: 15%; margin-top: 0px;">Maashes Phillips</p>
+                <div style="margin-right: 15%">
+                    <button class="navHeaderBtn w3-right">Contact</button>
+                    <button class="navHeaderBtn w3-right">About</button>
+                    <button class="navHeaderBtn w3-right">Projects</button>
+                </div>
             </div>
         </div>
 
@@ -31,5 +34,17 @@
             <p>Hello! My name is Maashes Phillips and welcome to my website. Here you will find information about the projects I have worked on as well as a bit about me as a person. My main areas of interest and professional expertise are User Interface/User Experience design. In my free time, I work with microcontrollers and embedded systems to create fun/interesting projects.</p>
         </div>
 
+        <div class="projectSection w3-container">
+            <hr class="sectionRule">
+            <p class="headerLabel">Projects</p>
+            <div id="prjList" class="projectListPanel">
+                <div id="row0" class="w3-cell-row w3-stretch panelRow"></div>
+                <div id="row1" class="w3-cell-row w3-stretch panelRow"></div>
+            </div>
+            <div id="projectView"></div>
+            <hr class="sectionRule">
+        </div>
+
+        <script src="/js/main.js"></script>
     </body>
 </html>

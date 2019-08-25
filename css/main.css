@@ -45,8 +45,16 @@ p{
     font-family: 'Ubuntu';
 }
 
+p.headerLabel{
+    text-transform: uppercase;
+    padding-top:0px;
+    margin-top: 5px;
+    font-weight: bolder;
+    margin-left: 15%;
+}
+
 button.navHeaderBtn{
-    height: 35px;
+    height: 30px;
     border-style: solid;
     border-color: #1f3c0d;
     border-width: thick;
@@ -54,7 +62,7 @@ button.navHeaderBtn{
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 8px;
-    min-width: 125px;
+    min-width: 185px;
     font-weight: bold;
     text-align: center;
     color: #1f3c0d;
@@ -101,6 +109,18 @@ hr.headerRule{
     margin-bottom: 0px;
 }
 
+hr.sectionRule{
+    border: 2px solid;
+    width: 75%;
+    border-color: #1f3c0d;
+    display:grid;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
 img.splashImg{
     margin-bottom: 20px;
 }
@@ -116,4 +136,36 @@ div.introSection{
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 20px;
+    margin-bottom: 10%
+}
+
+div.projectSection{
+    background-color: #abaaa6;
+    width: 100%;
+    height: 100%;
+}
+
+div.projectListPanel{
+    width: 100%;
+    height: 300px;
+}
+
+div.panelRow{
+    width: 100%;
+    padding-left: 10%;
+}
+
+div.projectCellLarge{
+    background-color: #424341;
+    width: 250px;
+    height: 200px;
+    margin-left: 5px;
+}
+
+div.projectCellSmall{
+    background-color: #424341;
+    width: 50px;
+    height: 50px;
+    margin-top: 1px;
+    margin-left: 5px;
 }
