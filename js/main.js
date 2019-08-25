@@ -1,11 +1,10 @@
 
-//Constants
-var ROW0PROJECTS = 3;
-var ROW1PROJECTS = 6;
-
-//SECTION FOR MAIN PAGE LOADING
+//SECTION FOR MAIN PAGE EVENTS
 function pageLoad() {
     "use strict";
+    var ROW0PROJECTS = 3;
+    var ROW1PROJECTS = 6;
+
     var row0 = document.getElementById("row0");
     var row1 = document.getElementById("row1");
 
@@ -24,4 +23,9 @@ function pageLoad() {
         subProjectDiv.className = "w3-cell w3-col projectCellSmall";
         row1.appendChild(subProjectDiv);
     }
+
+    var tileManager = new ProjectTileManager(row0, row1);
+    tileManager.ArrangeRows();
 }
+
+
