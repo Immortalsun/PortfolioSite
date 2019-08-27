@@ -16,10 +16,11 @@ function ProjectTileManager(row0, row1) {
 
         this.Element.onmouseover = function() {
             if(isLarge){
+                //remove overlay, show title card
 
             }
             else{
-
+                //border glow outline
             }
         }
 
@@ -33,7 +34,8 @@ function ProjectTileManager(row0, row1) {
                 row0Tiles[i].style.marginRight = row0Tiles[i].offsetWidth/8 + "px";
             }
             //attach hover handlers for large tiles
-            var tileArrayItem = new Tile(row0Tiles[i], true)
+            var tileArrayItem = new Tile(row0Tiles[i], true);
+            this.tiles.push(tileArrayItem);
             //apply tile content (bgImg + overlay + name)
 
         }

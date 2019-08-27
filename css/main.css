@@ -1,7 +1,10 @@
  /* Global Styles */
-body{
+* {
     font-family: 'Ubuntu', sans-serif;
     font-size: 100%;
+}
+
+body{
     background-color:  #ede5e2;
 }
 
@@ -45,6 +48,7 @@ p{
     font-family: 'Ubuntu';
 }
 
+/*Page Nav Bar + Title Section*/
 p.headerLabel{
     text-transform: uppercase;
     padding-top:0px;
@@ -139,6 +143,7 @@ div.introSection{
     margin-bottom: 10%
 }
 
+/* Project Tiles Panel Styles*/
 div.projectSection{
     background-color: #abaaa6;
     width: 100%;
@@ -152,17 +157,27 @@ div.projectListPanel{
     margin-right: 0px;
 }
 
-div.panelRow{
+div.panelRow0{
     width: 100%;
     padding-left: 10%;
     min-height: 25%;
+    height: 75%;
+}
+
+div.panelRow1{
+    width: 100%;
+    padding-left: 10%;
+    min-height: 25%;
+    height: 25%;
 }
 
 div.projectCellLarge{
     background-color: #424341;
-    width: 360px;
+    max-width: 360px;
     min-height: 50px;
-    height: 350px;
+    width: 33%;
+    height: 75%
+    max-height: 350px;
 }
 
 div.projectCellSmall{
@@ -175,7 +190,7 @@ div.projectCellSmall{
 }
 
 /*dynamic tile elements*/
-#tileOverlay{
+.tileOverlay{
     position: fixed;
     display: block;
     width: 100%;
@@ -187,4 +202,11 @@ div.projectCellSmall{
     z-index: 2;
     background-color: #60424341;
     cursor: pointer;
+}
+
+.tileTitleCard{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 35%;
 }
