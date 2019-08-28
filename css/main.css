@@ -161,14 +161,13 @@ div.panelRow0{
     width: 100%;
     padding-left: 10%;
     min-height: 25%;
-    height: 75%;
+    height: 65%;
 }
 
 div.panelRow1{
     width: 100%;
     padding-left: 10%;
-    min-height: 25%;
-    height: 25%;
+    height: 35%;
 }
 
 div.projectCellLarge{
@@ -176,7 +175,8 @@ div.projectCellLarge{
     max-width: 360px;
     min-height: 50px;
     width: 33%;
-    height: 75%
+    height: 75%;
+    margin-top: 10px;
     max-height: 350px;
 }
 
@@ -190,6 +190,14 @@ div.projectCellSmall{
 }
 
 /*dynamic tile elements*/
+.tileImage {
+    display: block;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
 .tileOverlay{
     position: fixed;
     display: block;
@@ -199,7 +207,7 @@ div.projectCellSmall{
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 1;
     background-color: #60424341;
     cursor: pointer;
 }
@@ -209,4 +217,5 @@ div.projectCellSmall{
     display: none;
     width: 100%;
     height: 35%;
+    z-index: 2;
 }

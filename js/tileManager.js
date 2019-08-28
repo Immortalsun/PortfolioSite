@@ -5,7 +5,7 @@ function ProjectTileManager(row0, row1) {
     this.tiles = [];
     this.currentTile = undefined; //current tile will be used when a tile
     //is selected for full-width view
-
+    this.contentManger = new ContentManager();
     //TILE OPERATIONAL OBJECT
     function Tile(tileElement,isLarge){
         this.Element = tileElement;
@@ -13,6 +13,23 @@ function ProjectTileManager(row0, row1) {
         this.width = tileElement.offsetWidth;
         this.isLarge = isLarge;
         this.isExpanded = false;
+
+        this.attachImage = function (imgSrc) {
+            var tileImg = document.createElement("img");
+            tileImg.setAttribute("src", imgSrc);
+            tileImg.className = "tileImage";
+            tileImg.style.maxHeight = this.Element.offsetHeight+"px";
+            tileImg.style.maxWidth = this.Element.offsetWidth+"px";
+            this.Element.appendChild(tileImg);
+        }
+
+        this.attachOverlay = function () {
+
+        }
+
+        this.atachTitleCard = function() {
+
+        }
 
         this.Element.onmouseover = function() {
             if(isLarge){
@@ -33,11 +50,14 @@ function ProjectTileManager(row0, row1) {
             if(i < row0Tiles.length-1){
                 row0Tiles[i].style.marginRight = row0Tiles[i].offsetWidth/8 + "px";
             }
+            else{
+                row0Tiles[i].style.marginRight = "0px";
+            }
             //attach hover handlers for large tiles
             var tileArrayItem = new Tile(row0Tiles[i], true);
             this.tiles.push(tileArrayItem);
             //apply tile content (bgImg + overlay + name)
-
+            tileArrayItem.attachImage("../projectInfo/mainprj"+i+"/tileImage.png");
         }
     };
 
