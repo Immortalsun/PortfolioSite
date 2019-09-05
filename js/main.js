@@ -12,7 +12,7 @@ function pageLoad() {
     for (; i < ROW0PROJECTS; i++) {
         var projectDiv = document.createElement("div");
         projectDiv.id = "prj" + i;
-        projectDiv.className = "w3-cell w3-col projectCellLarge";
+        projectDiv.className = "w3-cell projectCellLarge";
         row0.appendChild(projectDiv);
     }
 
@@ -20,7 +20,7 @@ function pageLoad() {
     for(; j < ROW1PROJECTS; j++) {
         var subProjectDiv = document.createElement("div");
         subProjectDiv.id = "sPrj" + j;
-        subProjectDiv.className = "w3-cell w3-col projectCellSmall";
+        subProjectDiv.className = "w3-cell projectCellSmall";
         row1.appendChild(subProjectDiv);
     }
 

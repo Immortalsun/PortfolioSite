@@ -18,16 +18,12 @@ function ProjectTileManager(row0, row1) {
             var tileImg = document.createElement("img");
             tileImg.setAttribute("src", imgSrc);
             tileImg.className = "tileImage";
-            tileImg.style.maxHeight = this.Element.offsetHeight+"px";
-            tileImg.style.maxWidth = this.Element.offsetWidth+"px";
             this.Element.appendChild(tileImg);
         }
 
         this.attachOverlay = function () {
             var tileOVerlay = document.createElement("div");
             tileOVerlay.className = "tileOverlay";
-            tileOVerlay.style.maxHeight = this.Element.offsetHeight+"px";
-            tileOVerlay.style.maxWidth = this.Element.offsetWidth+"px";
             this.Element.appendChild(tileOVerlay);
         }
 
@@ -35,16 +31,40 @@ function ProjectTileManager(row0, row1) {
 
         }
 
-        this.Element.onmouseover = function() {
+        this.Element.onmouseover = function(event) {
             if(isLarge){
                 //remove overlay, show title card
-
+               if(event.srcElement.className === "tileOverlay"){
+                   event.srcElement.style.display = "none";
+                   var parent = event.srcElement.parentElement;
+                   if(parent !== undefined){
+                       //var titleCard = parent.children[2];
+                   }
+               }
             }
             else{
                 //border glow outline
             }
         }
 
+        this.Element.onmouseout = function(event) {
+            if(isLarge){
+                //show overlay, remve title card
+               if(event.srcElement.className === "tileImage"){
+                  var parent = event.srcElement.parentElement;
+                  if(parent !== undefined){
+                    var overlay = parent.children[1];
+                    if(overlay !== undefined){
+                        overlay.style.display = "block";
+                    }
+                  }
+               }
+            }
+            else{
+                //border glow outline
+            }
+        }
+         
     }
     //END TILE DEFINITION
 
@@ -58,6 +78,7 @@ function ProjectTileManager(row0, row1) {
             //apply tile content (bgImg + overlay + name)
             tileArrayItem.attachImage("../projectInfo/mainprj"+i+"/tileImage.png")
             tileArrayItem.attachOverlay();
+
         }
     };
 
