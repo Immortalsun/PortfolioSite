@@ -11,34 +11,59 @@ function ProjectTileManager(row0, row1) {
         this.Element = tileElement;
         this.height = tileElement.offsetHeight;
         this.width = tileElement.offsetWidth;
+        this.imgClassName = "tileImage w3-opacity w3-hover-opacity-off";
+        this.titleCardClassName = "tileTitleCard w3-container";
         this.isLarge = isLarge;
         this.isExpanded = false;
 
         this.attachImage = function (imgSrc) {
             var tileImg = document.createElement("img");
             tileImg.setAttribute("src", imgSrc);
-            tileImg.className = "tileImage";
+            tileImg.className = this.imgClassName;
             this.Element.appendChild(tileImg);
         }
 
-        this.attachOverlay = function () {
-            var tileOVerlay = document.createElement("div");
-            tileOVerlay.className = "tileOverlay";
-            this.Element.appendChild(tileOVerlay);
-        }
 
-        this.atachTitleCard = function() {
-
+        this.attachTitleCard = function() {
+            var titleCard = document.createElement("div");
+            titleCard.className = this.titleCardClassName;
+            var titleText = document.createElement("p");
+            titleText.className = "tileTitle"
+            titleText.innerHTML = "TEST";
+            titleCard.appendChild(titleText);
+            this.Element.appendChild(titleCard);
         }
 
         this.Element.onmouseover = function(event) {
+            var imgClassName = "tileImage w3-opacity w3-hover-opacity-off";
+            var titleCardClassName = "tileTitleCard w3-container";
+
             if(isLarge){
-                //remove overlay, show title card
-               if(event.srcElement.className === "tileOverlay"){
-                   event.srcElement.style.display = "none";
+                //show title card
+               if(event.srcElement.className === imgClassName) {
                    var parent = event.srcElement.parentElement;
                    if(parent !== undefined){
-                       //var titleCard = parent.children[2];
+                       var titleCard = parent.children[1];
+                       if(titleCard !== undefined){
+                           
+                            var titleHeight = 0;
+                            var targetHeight = parent.offsetHeight * .15;
+                            var anim = setInterval(frame, 5);
+                            function frame(){
+                                if(titleHeight >= targetHeight){
+                                    clearInterval(anim);
+                                    var titleText = titleCard.children[0];
+                                    if(titleText !== undefined){
+                                        titleText.style.display = "block";
+                                    }
+                                }
+                                else{
+                                    titleHeight++;
+                                    titleCard.style.height = titleHeight + "px";
+                                }
+                            }
+
+                       }
                    }
                }
             }
@@ -48,14 +73,31 @@ function ProjectTileManager(row0, row1) {
         }
 
         this.Element.onmouseout = function(event) {
+            var imgClassName = "tileImage w3-opacity w3-hover-opacity-off";
+            var titleCardClassName = "tileTitleCard w3-container w3-animate-bottom";
             if(isLarge){
-                //show overlay, remve title card
-               if(event.srcElement.className === "tileImage"){
+                //remove title card
+               if(event.srcElement.className === imgClassName 
+                || event.srcElement.className === titleCardClassName){
                   var parent = event.srcElement.parentElement;
                   if(parent !== undefined){
-                    var overlay = parent.children[1];
-                    if(overlay !== undefined){
-                        overlay.style.display = "block";
+                    var titleCard = parent.children[1];
+                    if(titleCard !== undefined){
+                       var currentHeight = titleCard.offsetHeight;
+                       var anim = setInterval(frame, 5);
+                       var titleText = titleCard.children[0];
+                       if(titleText !== undefined){
+                            titleText.style.display = "none";
+                        }
+                       function frame(){
+                           if(currentHeight === 0){
+                               clearInterval(anim);
+                           }
+                           else{
+                               currentHeight--;
+                               titleCard.style.height = currentHeight + "px";
+                           }
+                       }
                     }
                   }
                }
@@ -76,8 +118,9 @@ function ProjectTileManager(row0, row1) {
             var tileArrayItem = new Tile(row0Tiles[i], true);
             this.tiles.push(tileArrayItem);
             //apply tile content (bgImg + overlay + name)
-            tileArrayItem.attachImage("../projectInfo/mainprj"+i+"/tileImage.png")
-            tileArrayItem.attachOverlay();
+            tileArrayItem.attachImage("../projectInfo/mainprj"+i+"/tileImage.png");
+            tileArrayItem.attachTitleCard();
+            //tileArrayItem.attachOverlay();
 
         }
     };

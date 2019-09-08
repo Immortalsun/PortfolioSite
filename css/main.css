@@ -201,20 +201,17 @@ div.projectCellSmall{
     cursor: pointer;
 }
 
-.tileOverlay {
+div.tileTitleCard {
     position: absolute;
-    display: block;
+    background-color: #424341;
     width: 100%;
-    height: 100%;
+    height: 0px;
+    bottom: 0;
     z-index: 1;
-    background-color: #42434180;
-    cursor: pointer;
 }
 
-.tileTitleCard{
-    position: fixed;
+p.tileTitle {
+    color: white;
     display: none;
-    width: 100%;
-    height: 35%;
-    z-index: 2;
 }
+
