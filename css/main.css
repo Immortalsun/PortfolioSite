@@ -129,10 +129,19 @@ img.splashImg{
     margin-bottom: 20px;
 }
 
+.glasses-case {
+    position: absolute;
+    margin-left: 1px;
+    height: 45px;
+    width: 90px;
+    z-index: 0;
+}
+
 div.navSection{
+    position: absolute;
     background-color:  #ede5e2;
     min-height: 50px;
-    position:static;
+    z-index: 1;
 }
 
 div.introSection{
@@ -176,7 +185,6 @@ div.projectCellLarge{
     max-width: 33%;
     max-height: 350px;
     height: 75%;
-    padding: 0px;
     border: 5px solid;
     border-color: #abaaa6;
 }
