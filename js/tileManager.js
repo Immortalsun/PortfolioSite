@@ -12,7 +12,7 @@ function ProjectTileManager(row0, row1) {
         this.height = tileElement.offsetHeight;
         this.width = tileElement.offsetWidth;
         this.imgClassName = "tileImage w3-opacity w3-hover-opacity-off";
-        this.titleCardClassName = "tileTitleCard w3-container";
+        this.titleCardClassName = "tileTitleCard";
         this.isLarge = isLarge;
         this.isExpanded = false;
 
@@ -33,80 +33,6 @@ function ProjectTileManager(row0, row1) {
             titleCard.appendChild(titleText);
             this.Element.appendChild(titleCard);
         }
-
-        this.Element.onmouseover = function(event) {
-            var imgClassName = "tileImage w3-opacity w3-hover-opacity-off";
-            var titleCardClassName = "tileTitleCard w3-container";
-
-            if(isLarge){
-                //show title card
-               if(event.srcElement.className === imgClassName) {
-                   var parent = event.srcElement.parentElement;
-                   if(parent !== undefined){
-                       var titleCard = parent.children[1];
-                       if(titleCard !== undefined){
-                           
-                            var titleHeight = 0;
-                            var targetHeight = parent.offsetHeight * .15;
-                            var anim = setInterval(frame, 5);
-                            function frame(){
-                                if(titleHeight >= targetHeight){
-                                    clearInterval(anim);
-                                    var titleText = titleCard.children[0];
-                                    if(titleText !== undefined){
-                                        titleText.style.display = "block";
-                                    }
-                                }
-                                else{
-                                    titleHeight++;
-                                    titleCard.style.height = titleHeight + "px";
-                                }
-                            }
-
-                       }
-                   }
-               }
-            }
-            else{
-                //border glow outline
-            }
-        }
-
-        this.Element.onmouseout = function(event) {
-            var imgClassName = "tileImage w3-opacity w3-hover-opacity-off";
-            var titleCardClassName = "tileTitleCard w3-container w3-animate-bottom";
-            if(isLarge){
-                //remove title card
-               if(event.srcElement.className === imgClassName 
-                || event.srcElement.className === titleCardClassName){
-                  var parent = event.srcElement.parentElement;
-                  if(parent !== undefined){
-                    var titleCard = parent.children[1];
-                    if(titleCard !== undefined){
-                       var currentHeight = titleCard.offsetHeight;
-                       var anim = setInterval(frame, 5);
-                       var titleText = titleCard.children[0];
-                       if(titleText !== undefined){
-                            titleText.style.display = "none";
-                        }
-                       function frame(){
-                           if(currentHeight === 0){
-                               clearInterval(anim);
-                           }
-                           else{
-                               currentHeight--;
-                               titleCard.style.height = currentHeight + "px";
-                           }
-                       }
-                    }
-                  }
-               }
-            }
-            else{
-                //border glow outline
-            }
-        }
-         
     }
     //END TILE DEFINITION
 
@@ -120,8 +46,19 @@ function ProjectTileManager(row0, row1) {
             //apply tile content (bgImg + overlay + name)
             tileArrayItem.attachImage("../projectInfo/mainprj"+i+"/tileImage.png");
             tileArrayItem.attachTitleCard();
-            //tileArrayItem.attachOverlay();
-
+            var elem = $(row0Tiles[i]);
+            elem.hover(
+                //mouseEnter and mouseLeave
+                function (event) {
+                  var tileCard = event.currentTarget;
+                  var options = {
+                      duration: 250,
+                      queue: false
+                  };
+                  $(tileCard).find("div.tileTitleCard").slideToggle(options);
+                  $(card).find("p.tileTitle").fadeToggle(options);
+                }
+                );
         }
     };
 

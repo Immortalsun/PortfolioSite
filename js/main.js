@@ -1,6 +1,6 @@
 
 //SECTION FOR MAIN PAGE EVENTS
-function pageLoad() {
+$(document).ready( function(){
     "use strict";
     var ROW0PROJECTS = 3;
     var ROW1PROJECTS = 6;
@@ -26,6 +26,5 @@ function pageLoad() {
 
     var tileManager = new ProjectTileManager(row0, row1);
     tileManager.ArrangeRows();
-}
-
+});
 
