@@ -49,10 +49,21 @@
             <hr class="sectionRule">
             <p class="headerLabel">Projects</p>
             <div id="prjList" class="projectListPanel">
-                <div id="row0" class="w3-cell-row panelRow0"></div>
-                <div id="row1" class="w3-cell-row panelRow1"></div>
+                <div id="row0" class="w3-row w3-stretch panelRow0"></div>
+                <div id="row1" class="w3-row w3-stretch panelRow1"></div>
             </div>
-            <div id="projectView"></div>
+            <div id="projectView w3-display-container">
+                <div class="w3-display-left">
+                    <img id="projPrev" src ="/img/Arrow_Left.png">
+                </div>
+                <div id="selectedPrjSection" class="w3-cell-row w3-display-middle">
+                    <div id="selectedPrjImg" class="w3-cell"></div>
+                    <div id="selectedPrjInfo" class="w3-cell"></div>
+                </div>
+                <div id="projSelector" class="w3-display-bottommiddle">
+                </div>
+                <div id="projNext" class="w3-display-right"></div>
+            </div>
             <hr class="sectionRule">
         </div>
         <script src="/js/jquery-3.4.1.js"></script>

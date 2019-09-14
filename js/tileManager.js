@@ -52,24 +52,38 @@ function ProjectTileManager(row0, row1) {
                 function (event) {
                   var tileCard = event.currentTarget;
                   var options = {
-                      duration: 250,
+                      duration: 350,
                       queue: false
                   };
-                  $(tileCard).find("div.tileTitleCard").slideToggle(options);
-                  $(card).find("p.tileTitle").fadeToggle(options);
+                  $(tileCard).find("div.tileTitleCard").stop().slideToggle(options);
+                  $(tileCard).find("p.tileTitle").fadeIn(options);
                 }
                 );
+            elem.click(function (event) {
+
+            });
         }
     };
 
     this.arrangeRow1 = function () {
         var row1Tiles = this.row1.children;
         for(var j = 0; j < row1Tiles.length; j++){
-            if(j < row1Tiles.length-1){
-                row1Tiles[j].style.marginRight = row1Tiles[j].offsetWidth/10 + "px";
-            }
+
             //attach hover handlers for small tiles (border highlight)
             //apply small tile content (text with .fileExtension based on project)
+            var smallElem = $(row1Tiles[j]);
+            smallElem.hover(
+                function (event) {
+                    var tile = event.currentTarget;
+                    $(tile).toggleClass('glowItem');
+                }
+            )
+
+            smallElem.click(
+                function (event){
+
+                }
+            );
         }
     };
 

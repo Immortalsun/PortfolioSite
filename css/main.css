@@ -156,56 +156,56 @@ div.introSection{
 div.projectSection{
     background-color: #abaaa6;
     width: 100%;
-    height: 600px;
+    height: 100%;
 }
 
 div.projectListPanel{
     width: 100%;
-    height: 550px;
+    height: 650px;
     padding-right: 0px;
     margin-right: 0px;
 }
 
 div.panelRow0{
+    position: relative;
     width: 100%;
-    padding-left: 10%;
     min-height: 25%;
     height: 75%;
 }
 
 div.panelRow1{
+    position: relative;
     width: 100%;
-    padding-left: 10%;
     height: 25%;
+    margin-left: 15px;
 }
 
 div.projectCellLarge{
     position: relative;
     background-color: #424341;
-    max-width: 33%;
-    max-height: 350px;
-    height: 75%;
-    border: 5px solid;
-    border-color: #abaaa6;
+    max-width: 30%;
+    height: 100%;
+    margin-left: 35px;
+    margin-bottom: 5px;
+    padding: 0px;
 }
 
 div.projectCellSmall{
     position: relative;
     background-color: #424341;
-    max-width: 16%;
-    border: 5px solid;
-    border-color: #abaaa6;
-    margin-top: 10px;
-    padding: 0px;
+    height:100%;
+    width: 14.7%;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 /*dynamic tile elements*/
 .tileImage {
-    position: absolute;
-    display: block;
-    z-index: 0;
+    position: relative;
     width: 100%;
     height: 100%;
+    padding: 0px;
+    margin: 0px;
     cursor: pointer;
 }
 
@@ -215,13 +215,28 @@ div.tileTitleCard {
     background-color: #424341;
     width: 100%;
     height: 25%;
+    left:0;
     bottom: 0;
     z-index: 1;
 }
 
+
 p.tileTitle {
     color: white;
-    display: none;
     margin-left: 20px;
 }
 
+.glowItem {
+    box-shadow: inset
+        0 0 28px 5px #65804a69;  
+}
+
+#projPrev{
+    display:none;
+}
+/*Selected Project Section*/
+div.projectView{
+    display: none;
+    width: 100%;
+    height: 100%;
+}

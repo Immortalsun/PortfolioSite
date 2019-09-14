@@ -12,15 +12,19 @@ $(document).ready( function(){
     for (; i < ROW0PROJECTS; i++) {
         var projectDiv = document.createElement("div");
         projectDiv.id = "prj" + i;
-        projectDiv.className = "w3-cell projectCellLarge";
+        projectDiv.className = "projectCellLarge w3-col";
         row0.appendChild(projectDiv);
+        
     }
 
     var j = 0;
     for(; j < ROW1PROJECTS; j++) {
         var subProjectDiv = document.createElement("div");
         subProjectDiv.id = "sPrj" + j;
-        subProjectDiv.className = "w3-cell projectCellSmall";
+        subProjectDiv.className = "w3-col w3-hide-small projectCellSmall";
+        if(j > 0 && j%2===1){
+            subProjectDiv.style.marginRight = "2%";
+        }
         row1.appendChild(subProjectDiv);
     }
 
