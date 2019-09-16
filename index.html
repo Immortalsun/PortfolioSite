@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
     </head>
-    <body onload="pageLoad()">
+    <body>
         <div class="w3-top w3-margin-botton">
             <div class="navSection w3-bar">
                 <p class="w3-left" style="padding-top: 10px; margin-left: 15%; margin-top: 0px;">Maashes Phillips</p>
@@ -19,11 +19,22 @@
         </div>
 
         <div class="headerSection w3-container">
-            <div class="imgSplashSection w3-center">
-                <img class="splashImg w3-image" src="img/Splash-Screen_Maashes.png">
+            <div class="imgSplashSection w3-center w3-display-container">
+                <img class="splashImg w3-image w3-display-top" src="img/Splash-Screen_Maashes.png">
+                <svg  class="glasses-case w3-display-middle" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 800 351" style="enable-background:new 0 0 800 351;" xml:space="preserve">
+                    <path d="M603,38.1c-105,4.4-126.4,34.5-202.8,34.5s-97.8-30.1-202.8-34.5C92.4,33.7,11,47.7,11,47.7v52.6
+                        c13.3,3.3,24.4,25.8,30.6,54.8c6.1,29,4.1,159.1,149.7,158c145.6-1.1,175.3-139.9,179.2-169c4.1-29,29.5-26.9,29.5-26.9
+                        s25.5-2.2,29.5,26.9c4.1,29,33.6,167.9,179.2,169c145.6,1.1,143.6-129,149.7-158s17.2-51.7,30.6-54.8V47.7
+                        C789.4,47.7,708,33.7,603,38.1z M189.3,293.5C83.9,291.3,64.9,212.5,61,166.6c-3.7-45.8,6.3-70.9,32.1-84.5
+                        c32.1-16.8,106.1-13.8,106.1-13.8s146.7,0,144.3,72.3C341.1,220.6,293.9,295.6,189.3,293.5z M739.9,166.6
+                        c-3.7,45.8-22.9,124.6-128.4,126.8c-104.6,2.2-151.7-72.9-154.3-153C455,68.2,601.5,68.2,601.5,68.2s74-3.1,106.1,13.8
+                        C733.6,95.7,743.6,120.8,739.9,166.6z"/>
+                    </svg>
+                </img>
             </div>
             <div class="headerTextSection w3-center">
-                <h4 style="margin-bottom: 30px:">I am a human programmer</h2>
+                <h4 style="margin-bottom: 30px;">I am a human programmer</h2>
                 <h1 style="margin: 0px; padding: 0px;">Maashes Phillips</h1>
                 <hr class="headerRule">
                 <h3 style="margin: 0px;">UI /   UX  /   AI  /   ROBOTICS</h3>
@@ -38,13 +49,38 @@
             <hr class="sectionRule">
             <p class="headerLabel">Projects</p>
             <div id="prjList" class="projectListPanel">
-                <div id="row0" class="w3-cell-row w3-stretch panelRow"></div>
-                <div id="row1" class="w3-cell-row w3-stretch panelRow"></div>
+                <div id="row0" class="w3-row w3-stretch panelRow0">
+                    <div id="prjSect1" class="mainPrjBlock w3-col">
+                        <div class="mainPanelRow w3-row w3-stretch"></div>
+                        <div class="subPanelRow w3-row w3-stretch w3-hide-small"></div>
+                    </div>
+                    <div id="prjSect2" class="mainPrjBlock w3-col">
+                        <div class="mainPanelRow w3-row w3-stretch"></div>
+                        <div class="subPanelRow w3-row w3-stretch w3-hide-small"></div>
+                    </div>
+                    <div id="prjSect3" class="mainPrjBlock w3-col">
+                        <div class="mainPanelRow w3-row w3-stretch"></div>
+                        <div class="subPanelRow w3-row w3-stretch w3-hide-small"></div>
+                    </div>
+                </div>
             </div>
-            <div id="projectView"></div>
+            <div id="projectView w3-display-container">
+                <div class="w3-display-left">
+                    <img id="projPrev" src ="/img/Arrow_Left.png">
+                </div>
+                <div id="selectedPrjSection" class="w3-cell-row w3-display-middle">
+                    <div id="selectedPrjImg" class="w3-cell"></div>
+                    <div id="selectedPrjInfo" class="w3-cell"></div>
+                </div>
+                <div id="projSelector" class="w3-display-bottommiddle">
+                </div>
+                <div id="projNext" class="w3-display-right"></div>
+            </div>
             <hr class="sectionRule">
         </div>
-
+        <script src="/js/jquery-3.4.1.js"></script>
+        <script src="/js/contentManager.js"></script>
+        <script src="/js/tileManager.js"></script>
         <script src="/js/main.js"></script>
     </body>
 </html>

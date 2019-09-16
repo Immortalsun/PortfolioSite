@@ -1,7 +1,10 @@
  /* Global Styles */
-body{
+* {
     font-family: 'Ubuntu', sans-serif;
     font-size: 100%;
+}
+
+body{
     background-color:  #ede5e2;
 }
 
@@ -45,6 +48,7 @@ p{
     font-family: 'Ubuntu';
 }
 
+/*Page Nav Bar + Title Section*/
 p.headerLabel{
     text-transform: uppercase;
     padding-top:0px;
@@ -125,10 +129,19 @@ img.splashImg{
     margin-bottom: 20px;
 }
 
+.glasses-case {
+    position: absolute;
+    margin-left: 1px;
+    height: 45px;
+    width: 90px;
+    z-index: 0;
+}
+
 div.navSection{
+    position: absolute;
     background-color:  #ede5e2;
     min-height: 50px;
-    position:static;
+    z-index: 1;
 }
 
 div.introSection{
@@ -139,6 +152,7 @@ div.introSection{
     margin-bottom: 10%
 }
 
+/* Project Tiles Panel Styles*/
 div.projectSection{
     background-color: #abaaa6;
     width: 100%;
@@ -147,25 +161,91 @@ div.projectSection{
 
 div.projectListPanel{
     width: 100%;
-    height: 300px;
+    height: 650px;
+    padding-right: 0px;
+    margin-right: 0px;
 }
 
-div.panelRow{
+div.panelRow0{
+    position: relative;
     width: 100%;
-    padding-left: 10%;
+    height: 100%;
+    margin-left: 4%;
+}
+
+div.mainPrjBlock{
+    position: relative;
+    max-width: 30%;
+    height: 100%;
+    margin-left: 35px;
+}
+
+div.mainPanelRow{
+    position: relative;
+    width: 100%;
+    height: 75%;
+}
+
+div.subPanelRow{
+    position: relative;
+    width: 100%;
+    height: 20%;
 }
 
 div.projectCellLarge{
+    position: relative;
     background-color: #424341;
-    width: 250px;
-    height: 200px;
-    margin-left: 5px;
+    height: 100%;
+    margin-bottom: 20px;
+    padding: 0px;
 }
 
 div.projectCellSmall{
+    position: relative;
     background-color: #424341;
-    width: 50px;
-    height: 50px;
-    margin-top: 1px;
-    margin-left: 5px;
+    height:100%;
+    max-width: 50%;
+    border: 5px solid #abaaa6;
+}
+
+/*dynamic tile elements*/
+.tileImage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+div.tileTitleCard {
+    display: none;
+    position: absolute;
+    background-color: #424341;
+    width: 100%;
+    max-height: 18%;
+    left:0;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+p.tileTitle {
+    color: white;
+    margin-left: 20px;
+}
+
+.glowItem {
+    box-shadow: inset
+        0 0 28px 5px #65804a69;  
+}
+
+#projPrev{
+    display:none;
+}
+/*Selected Project Section*/
+div.projectView{
+    display: none;
+    width: 100%;
+    height: 100%;
 }
