@@ -169,24 +169,34 @@ div.projectListPanel{
 div.panelRow0{
     position: relative;
     width: 100%;
-    min-height: 25%;
+    height: 100%;
+    margin-left: 4%;
+}
+
+div.mainPrjBlock{
+    position: relative;
+    max-width: 30%;
+    height: 100%;
+    margin-left: 35px;
+}
+
+div.mainPanelRow{
+    position: relative;
+    width: 100%;
     height: 75%;
 }
 
-div.panelRow1{
+div.subPanelRow{
     position: relative;
     width: 100%;
-    height: 25%;
-    margin-left: 15px;
+    height: 20%;
 }
 
 div.projectCellLarge{
     position: relative;
     background-color: #424341;
-    max-width: 30%;
     height: 100%;
-    margin-left: 35px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     padding: 0px;
 }
 
@@ -194,9 +204,8 @@ div.projectCellSmall{
     position: relative;
     background-color: #424341;
     height:100%;
-    width: 14.7%;
-    margin-left: 5px;
-    margin-bottom: 5px;
+    max-width: 50%;
+    border: 5px solid #abaaa6;
 }
 
 /*dynamic tile elements*/
@@ -214,7 +223,7 @@ div.tileTitleCard {
     position: absolute;
     background-color: #424341;
     width: 100%;
-    height: 25%;
+    max-height: 18%;
     left:0;
     bottom: 0;
     z-index: 1;

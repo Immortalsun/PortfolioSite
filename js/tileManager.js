@@ -37,7 +37,7 @@ function ProjectTileManager(row0, row1) {
     //END TILE DEFINITION
 
     this.arrangeRow0 = function () {
-        var row0Tiles = this.row0.children;
+        var row0Tiles = this.row0;
         for (var i = 0; i < row0Tiles.length; i++) {
 
             //attach hover handlers for large tiles
@@ -66,7 +66,7 @@ function ProjectTileManager(row0, row1) {
     };
 
     this.arrangeRow1 = function () {
-        var row1Tiles = this.row1.children;
+        var row1Tiles = this.row1;
         for(var j = 0; j < row1Tiles.length; j++){
 
             //attach hover handlers for small tiles (border highlight)
