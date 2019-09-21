@@ -248,21 +248,20 @@ p.tileTitle {
 /*Selected Project Section*/
 div.projectView{
     display: none;
-    width: 100%;
+    width: 70%;
     height: 650px;
-    padding-right: 0px;
-    margin-right: 0px;
+    margin-left: 15%;
 }
 
 #selectedPrjSection{
-    width: 75%;
+    width: 80%;
     border: 2px solid #1f3c0d;
     background-color: #ede5e2;
 }
 
 #selectedPrjInfo{
-    height: 30%;
-    width:50%;
+    max-height: 30%;
+    width: 70%;
     padding-right: 20px;
 }
 
@@ -274,5 +273,18 @@ div.projectView{
     font-size: 1.2em;
     margin-top: 10%;
     margin-bottom: 10%;
+}
+
+#backToPrjPanel{
+    height: 25px;
+    width: 25px;
+}
+
+#closeIcon{
+    fill:#1f3c0d;
+}
+
+#closeIcon:hover{
+    fill: #f6c42b;
 }
 /*About Section*/

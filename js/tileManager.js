@@ -33,8 +33,8 @@ function ProjectTileManager(row0, row1) {
     }
     //END TILE DEFINITION
     function showProjectPanel(selectedTileId,tileIdx){
-        $("#prjList").hide();
-        $("#showPrjPanel").show();
+        $("#prjList").fadeOut();
+        $("#showPrjPanel").fadeIn();
         $("#showPrjPanel").find("#prjPanelImg").attr("src","../projectInfo/mainprj"+tileIdx+"/tileImage.png");
         $.getJSON("../projectInfo/mainPrj"+tileIdx+"/text.json", function(data){
             $("#prjTextTitle").text(data.title);

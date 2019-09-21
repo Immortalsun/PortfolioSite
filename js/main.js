@@ -53,6 +53,12 @@ $(document).ready( function(){
       
     });
 
+    $("#closeIcon").click(function(){
+        $("#showPrjPanel").fadeOut();
+        $("#prjList").fadeIn();
+       
+    });
+
     var tileManager = new ProjectTileManager(row0, row1);
     tileManager.ArrangeRows();
 });
