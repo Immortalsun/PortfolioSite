@@ -3,9 +3,6 @@ function ProjectTileManager(row0, row1) {
     this.row0 = row0;
     this.row1 = row1;
     this.tiles = [];
-    this.currentTile = undefined; //current tile will be used when a tile
-    //is selected for full-width view
-    this.contentManger = new ContentManager();
     //TILE OPERATIONAL OBJECT
     function Tile(tileElement,isLarge){
         this.Element = tileElement;
@@ -35,6 +32,16 @@ function ProjectTileManager(row0, row1) {
         }
     }
     //END TILE DEFINITION
+    function showProjectPanel(selectedTileId,tileIdx){
+        $("#prjList").hide();
+        $("#showPrjPanel").show();
+        $("#showPrjPanel").find("#prjPanelImg").attr("src","../projectInfo/mainprj"+tileIdx+"/tileImage.png");
+        $.getJSON("../projectInfo/mainPrj"+tileIdx+"/text.json", function(data){
+            $("#prjTextTitle").text(data.title);
+            $("#prjTextInfo").text(data.info);
+            $("#prjTextLink").attr("href",data.link);
+        });
+    }
 
     this.arrangeRow0 = function () {
         var row0Tiles = this.row0;
@@ -60,7 +67,8 @@ function ProjectTileManager(row0, row1) {
                 }
                 );
             elem.click(function (event) {
-
+                var tileCard = event.currentTarget;
+                showProjectPanel(tileCard.id,tileCard.id.substring(3));
             });
         }
     };

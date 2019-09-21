@@ -11,9 +11,9 @@
             <div class="navSection w3-bar">
                 <p class="w3-left" style="padding-top: 10px; margin-left: 15%; margin-top: 0px;">Maashes Phillips</p>
                 <div style="margin-right: 15%">
-                    <button class="navHeaderBtn w3-right">Contact</button>
-                    <button class="navHeaderBtn w3-right">About</button>
-                    <button class="navHeaderBtn w3-right">Projects</button>
+                    <button id="cntct" class="navHeaderBtn w3-right">Contact</button>
+                    <button id="abt" class="navHeaderBtn w3-right">About</button>
+                    <button id="proj" class="navHeaderBtn w3-right">Projects</button>
                 </div>
             </div>
         </div>
@@ -43,10 +43,11 @@
 
         <div class="introSection w3-container">
             <p>Hello! My name is Maashes Phillips and welcome to my website. Here you will find information about the projects I have worked on as well as a bit about me as a person. My main areas of interest and professional expertise are User Interface/User Experience design. In my free time, I work with microcontrollers and embedded systems to create fun/interesting projects.</p>
+            <p class="japaneseIntro">こんにちは、始めまして。私の名前はマアシェス。私は日本語の学生です、週末に勉強します。</p>
         </div>
 
         <div class="projectSection w3-container">
-            <hr class="sectionRule">
+            <hr id="topPrjRule" class="sectionRule">
             <p class="headerLabel">Projects</p>
             <div id="prjList" class="projectListPanel">
                 <div id="row0" class="w3-row w3-stretch panelRow0">
@@ -64,20 +65,32 @@
                     </div>
                 </div>
             </div>
-            <div id="projectView w3-display-container">
+            <div id="showPrjPanel" class="projectView w3-display-container">
                 <div class="w3-display-left">
                     <img id="projPrev" src ="/img/Arrow_Left.png">
                 </div>
                 <div id="selectedPrjSection" class="w3-cell-row w3-display-middle">
-                    <div id="selectedPrjImg" class="w3-cell"></div>
-                    <div id="selectedPrjInfo" class="w3-cell"></div>
+                    <div id="selectedPrjImg" class="w3-cell">
+                        <img id="prjPanelImg">
+                    </div>
+                    <div id="selectedPrjInfo" class="w3-cell w3-cell-top">
+                        <p id="prjTextTitle"></p>
+                        <p id="prjTextInfo"></p>
+                        <a id="prjTextLink" target="_blank">View Project on Github</p>
+                    </div>
                 </div>
                 <div id="projSelector" class="w3-display-bottommiddle">
                 </div>
-                <div id="projNext" class="w3-display-right"></div>
+                <div class="w3-display-right">
+                    <img id="projPrev" src ="/img/Arrow_Right.png">
+                </div>
             </div>
             <hr class="sectionRule">
         </div>
+        <div id="abtMainDiv" class="aboutSection w3-container">
+
+        </div>
+        
         <script src="/js/jquery-3.4.1.js"></script>
         <script src="/js/contentManager.js"></script>
         <script src="/js/tileManager.js"></script>
