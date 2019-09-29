@@ -46,7 +46,7 @@ $(document).ready( function(){
     });
 
     $("#abt").click(function () {
-      
+      scrollToElement("#abtContentDiv");
     });
 
     $("#cnct").click(function () {

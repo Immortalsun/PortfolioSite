@@ -67,14 +67,6 @@ function ProjectTileManager(row0, row1) {
         circle.style.backgroundColor = "#f6c42b";
     }
 
-    function selectNextProject(){
-
-    }
-
-    function selectPreviousProject(){
-
-    }
-
     function showProjectPanel(){
         $("#prjList").fadeOut();
         $("#showPrjPanel").fadeIn();
