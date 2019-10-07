@@ -2,18 +2,19 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="css/main.css">
+        <link type="text/css" rel="stylesheet" href="css/custom-scrollBar.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
     </head>
     <body>
         <div class="w3-top w3-margin-botton">
-            <div class="navSection w3-bar">
+            <div id="mainSiteNavBar" class="navSection w3-bar">
                 <p class="w3-left" style="padding-top: 10px; margin-left: 15%; margin-top: 0px;">Maashes Phillips</p>
                 <div style="margin-right: 15%">
-                    <button class="navHeaderBtn w3-right">Contact</button>
-                    <button class="navHeaderBtn w3-right">About</button>
-                    <button class="navHeaderBtn w3-right">Projects</button>
+                    <button id="cntct" class="navHeaderBtn w3-right">Contact</button>
+                    <button id="abt" class="navHeaderBtn w3-right">About</button>
+                    <button id="proj" class="navHeaderBtn w3-right">Projects</button>
                 </div>
             </div>
         </div>
@@ -43,10 +44,11 @@
 
         <div class="introSection w3-container">
             <p>Hello! My name is Maashes Phillips and welcome to my website. Here you will find information about the projects I have worked on as well as a bit about me as a person. My main areas of interest and professional expertise are User Interface/User Experience design. In my free time, I work with microcontrollers and embedded systems to create fun/interesting projects.</p>
+            <p class="japaneseIntro">こんにちは、始めまして。私の名前はマアシェス。私は日本語の学生です、週末に勉強します。</p>
         </div>
 
         <div class="projectSection w3-container">
-            <hr class="sectionRule">
+            <hr id="topPrjRule" class="sectionRule">
             <p class="headerLabel">Projects</p>
             <div id="prjList" class="projectListPanel">
                 <div id="row0" class="w3-row w3-stretch panelRow0">
@@ -64,22 +66,116 @@
                     </div>
                 </div>
             </div>
-            <div id="projectView w3-display-container">
+            <div id="showPrjPanel" class="projectView w3-display-container">
                 <div class="w3-display-left">
                     <img id="projPrev" src ="/img/Arrow_Left.png">
                 </div>
                 <div id="selectedPrjSection" class="w3-cell-row w3-display-middle">
-                    <div id="selectedPrjImg" class="w3-cell"></div>
-                    <div id="selectedPrjInfo" class="w3-cell"></div>
+                    <div id="selectedPrjImg" class="w3-cell">
+                        <img id="prjPanelImg">
+                    </div>
+                    <div id="selectedPrjInfo" class="w3-cell w3-cell-top">
+                        <p id="prjTextTitle"></p>
+                        <p id="prjTextInfo"></p>
+                        <a id="prjTextLink" target="_blank">View Project on Github</p>
+                    </div>
+                </div>
+                <div id="backToPrjPanel" class="w3-display-topright">
+                    <svg version="1.1" id="closeIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 475.2 475.2" style="enable-background:new 0 0 475.2 475.2;" xml:space="preserve">
+                    <g>
+                        <path d="M405.6,69.6C360.7,24.7,301.1,0,237.6,0s-123.1,24.7-168,69.6S0,174.1,0,237.6s24.7,123.1,69.6,168s104.5,69.6,168,69.6
+                            s123.1-24.7,168-69.6s69.6-104.5,69.6-168S450.5,114.5,405.6,69.6z M386.5,386.5c-39.8,39.8-92.7,61.7-148.9,61.7
+                            s-109.1-21.9-148.9-61.7c-82.1-82.1-82.1-215.7,0-297.8C128.5,48.9,181.4,27,237.6,27s109.1,21.9,148.9,61.7
+                            C468.6,170.8,468.6,304.4,386.5,386.5z"/>
+                        <path d="M342.3,132.9c-5.3-5.3-13.8-5.3-19.1,0l-85.6,85.6L152,132.9c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1
+                            l85.6,85.6l-85.6,85.6c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l85.6-85.6l85.6,85.6c2.6,2.6,6.1,4,9.5,4
+                            c3.5,0,6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1l-85.4-85.6l85.6-85.6C347.6,146.7,347.6,138.2,342.3,132.9z"/>
+                    </g>
+                </svg>
                 </div>
                 <div id="projSelector" class="w3-display-bottommiddle">
+                        <span id="m0" class="projCircleSelector"></span>
+                        <span id="s0" class="projCircleSelector"></span>
+                        <span id="s1" class="projCircleSelector"></span>
+                        <span id="m1" class="projCircleSelector"></span>
+                        <span id="s2" class="projCircleSelector"></span>
+                        <span id="s3" class="projCircleSelector"></span>
+                        <span id="m2" class="projCircleSelector"></span>
+                        <span id="s4" class="projCircleSelector"></span>
+                        <span id="s5" class="projCircleSelector"></span>
                 </div>
-                <div id="projNext" class="w3-display-right"></div>
+                <div class="w3-display-right">
+                    <img id="projNext" src ="/img/Arrow_Right.png">
+                </div>
             </div>
             <hr class="sectionRule">
         </div>
+        <div id="abtMainDiv" class="aboutSection w3-display-container">
+            <div id="abtContentDiv" class="w3-container">
+                <p class="headerLabel">About</p>
+                <div id="abtInfoPanel" class="w3-cell-row">
+                    <div id="abtImgDiv" class="w3-cell w3-display-container">
+                        <img id="abtFaceImg" src="/img/About_Maashes+Glasses.PNG" class="w3-img">
+                        </img>
+                    </div>
+                    <div id="abtInfoTextContainer" class="w3-cell">
+                        <p id="abtInfoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                        <p id="abtInfoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolor asdfasdfasdfasdfasfadaf"</p>
+                        <p id="abtInfoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+                <div id="skillsPanel" class="w3-display-container">
+                    <div class="skillBarSection w3-cell-row">
+                        <p class="skillHeader w3-cell">Skill Header</p>
+                        <img class="skillBar w3-cell" src="/img/XP-Bar_05.png">
+                    </div>
+                    <div class="skillBarSection w3-cell-row">
+                        <p class="skillHeader w3-cell">Skill Header</p>
+                        <img class="skillBar w3-cell" src="/img/XP-Bar_05.png">
+                    </div>
+                    <div class="skillBarSection w3-cell-row">
+                            <p class="skillHeader w3-cell">Skill Header</p>
+                            <img class="skillBar w3-cell" src="/img/XP-Bar_05.png">
+                    </div>
+                    <div class="skillBarSection w3-cell-row">
+                        <p class="skillHeader w3-cell">Skill Header</p>
+                        <img class="skillBar w3-cell" src="/img/XP-Bar_05.png">
+                    </div>
+                    <div class="skillBarSection w3-cell-row">
+                            <p class="skillHeader w3-cell">Skill Header</p>
+                            <img class="skillBar w3-cell" src="/img/XP-Bar_05.png">
+                    </div>
+                </div>
+            </div>
+            <hr id="w3-display-bottom" class="sectionRule">
+        </div>
+        <div id="contactMainDiv" class="contactSection w3-display-container">
+            <div id="contactContentDiv" class="w3-container">
+                <p class="headerLabel">Contact</p>
+                <div id="contactMainContainer" class="w3-container">
+                        <div id="contactSectionContainer" class="w3-cell-row">
+                            <div id="contactFormContainer" class="w3-cell">
+                                <h2 class="contactPrompt">Let's get in touch.</h3>
+                                <form class="w3-container" method="POST" action="/php/contact.php">
+                                    <input class="contactInput w3-input" type="text" name="name" placeholder="Name">
+                                    <input class="contactInput w3-input" type="text" name="email" placeholder="Email Address">
+                                    <input class="contactInput w3-input" type="text" name="subject" placeholder="Subject">
+                                    <textarea class="contactInputBlock" name="message" maxlength="2000" placeholder="Message..."></textarea>
+                                    <input class="sendButton w3-input" type="submit" name="submit" value="SEND">
+                                </form>
+                            </div>
+                            <div id="socialMediaContainer" class="w3-cell">
+                                <h2 class="contactPrompt">Social Media</h2>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <hr id="w3-display-bottom" class="sectionRule">
+        </div>
+        
         <script src="/js/jquery-3.4.1.js"></script>
-        <script src="/js/contentManager.js"></script>
+        <script src="/js/customScrollbar.js"></script>
         <script src="/js/tileManager.js"></script>
         <script src="/js/main.js"></script>
     </body>

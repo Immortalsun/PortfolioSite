@@ -31,9 +31,32 @@ $(document).ready( function(){
         row1.push(subProjectDiv1);
     }
 
+    function scrollToElement(elementId){
+        $('html, body').animate({
+            scrollTop: $(elementId).offset().top-50,
+        }, 1500);
+    }
+
     buildSection(section1,0,0,1);
     buildSection(section2,1,2,3)
     buildSection(section3,2,4,5);
+
+    $("#proj").click(function () {
+       scrollToElement("#topPrjRule");
+    });
+
+    $("#abt").click(function () {
+      scrollToElement("#abtContentDiv");
+    });
+
+    $("#cnct").click(function () {
+      
+    });
+
+    $("#closeIcon").click(function(){
+        $("#showPrjPanel").fadeOut();
+        $("#prjList").fadeIn();
+    });
 
     var tileManager = new ProjectTileManager(row0, row1);
     tileManager.ArrangeRows();

@@ -149,7 +149,12 @@ div.introSection{
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 20px;
-    margin-bottom: 10%
+    margin-bottom: 10%;
+}
+
+p.japaneseIntro{
+    text-align: left;
+    margin-top: 5%;
 }
 
 /* Project Tiles Panel Styles*/
@@ -205,7 +210,13 @@ div.projectCellSmall{
     background-color: #424341;
     height:100%;
     max-width: 50%;
-    border: 5px solid #abaaa6;
+}
+
+#sPrj0, #sPrj2, #sPrj4{
+    border-right:  10px solid #abaaa6;
+}
+#sPrj1, #sPrj3, #sPrj5{
+    border-left:  10px solid #abaaa6;
 }
 
 /*dynamic tile elements*/
@@ -240,12 +251,206 @@ p.tileTitle {
         0 0 28px 5px #65804a69;  
 }
 
-#projPrev{
-    display:none;
-}
 /*Selected Project Section*/
 div.projectView{
     display: none;
+    width: 70%;
+    height: 650px;
+    margin-left: 15%;
+}
+
+#projSelector{
+    width: 100%;
+    height: 25px;
+    margin-left: 28%;
+    margin-bottom: 10px;
+}
+
+#projPrev, #projNext{
+    cursor: pointer;
+}
+
+#projPrev:hover, #projNext:hover{
+    opacity: .7;
+}
+
+.projCircleSelector{
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #f6c42b!important;
+    background-color: transparent;
+    padding: 0;
+    margin-left: 3%;
+    opacity: .7;
+    cursor: pointer;
+   
+}
+
+.projCircleSelector:hover{
+    opacity:1;
+}
+
+#selectedPrjSection{
+    width: 80%;
+    max-height: 550px;
+    display:block;
+    border: 2px solid #1f3c0d;
+    background-color: #ede5e2;
+}
+
+#selectedPrjInfo{
+    width: 70%;
+    padding-right: 20px;
+    ;
+}
+
+#prjPanelImg{
+    height: 90%;
+}
+
+#prjTextTitle{
+    font-size: 1.5em;
+}
+
+#prjTextInfo{
+    display: inline-block;
+    height: 260px;
+    font-size: 1.2em;
+    margin-top: 10%;
+    margin-bottom: 10px;
+    overflow: auto;
+    text-overflow: ellipsis;
+}
+
+#backToPrjPanel{
+    height: 25px;
+    width: 25px;
+}
+
+#closeIcon{
+    fill:#1f3c0d;
+}
+
+#closeIcon:hover{
+    fill: #f6c42b;
+}
+
+/*About Section*/
+div.aboutSection{
     width: 100%;
     height: 100%;
+}
+
+#abtContentDiv{
+    width: 100%;
+    padding: 10px;
+    max-height: 750px;
+}
+
+#abtInfoPanel{
+    padding-left: 18%;
+    max-width: 70%;
+}
+
+#abtImgDiv{
+    width: 185px;
+    height: 185px;
+}
+
+#abtFaceImg{
+    position: absolute;
+    max-width: 185px;
+    max-height: 190px;
+}
+
+#abtInfoTextContainer{
+    border-left: 100px solid transparent;
+    margin-bottom: 20px;
+    max-width: 100%;
+    max-height: 25%;
+    display: inline-block;
+    height: 460px;
+    font-size: 1.2em;
+    overflow: auto;
+    text-overflow: ellipsis;
+    overflow:auto;
+}
+
+p.skillHeader{
+    width: 5%;
+    margin-right: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+div.skillBarSection{
+    margin-top: 10px;
+    margin-left: 25%;
+}
+
+/*Contact Section*/
+#contactMainDiv{
+    background-color: #abaaa6;
+    width: 100%;
+    height: 100%;
+}
+
+#contactContentDiv{
+    width: 100%;
+    padding: 10px;
+    max-height: 750px;
+}
+
+#contactMainContainer{
+    position: relative;
+    margin-left: 30%;
+    background-color: #424341;
+    height: 500px;
+    max-height: 750px;
+    Width: 40%;
+    padding:0px;
+}
+
+#contactSectionContainer{
+    padding: 0px;
+    margin-top: 0px;
+}
+
+#contactFormContainer{
+    width:70%;
+}
+
+#socialMediaContainer{
+    width:30%;
+}
+
+h2.contactPrompt{
+    font-size: 1.5em;
+    margin-left: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:  #f6c42b;
+}
+
+input.contactInput{
+    width: 50%;
+    margin-bottom: 35px;
+    max-width: 350px;
+}
+
+textarea.contactInputBlock{
+    width: 50%;
+    margin-bottom: 5px;
+    height: 140px;
+    max-width: 350px;
+}
+
+input.sendButton{
+    height: 40px;
+    width: 140px;
+    align-self: stretch;
+    cursor: pointer;
 }

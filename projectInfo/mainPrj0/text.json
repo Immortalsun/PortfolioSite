@@ -1,0 +1,8 @@
+
+{
+    "title": "Motor Control (Arduino C++)",
+    "info": "The main function of this code is to take analog input from a potentiometer, attempt to reduce signal noise, and translate the output to a PWM signal required to run a DC electric motor. Here I have chosen to use an exponential smoothing function. Potentiometer input is received (byte input 0 to 255) and based on the previous reading (we generate an initial reading if there isn't one), a forecast for the next input reading is generated.These values are averaged to produce a value that will increase or decrease the motor speed without jumps/hiccups in the signal.",
+    "link": "https://github.com/Immortalsun/ArduinoFiles/blob/master/_lightRing_motorControl.ino"    
+}
+
+
