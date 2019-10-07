@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="w3-top w3-margin-botton">
-            <div class="navSection w3-bar">
+            <div id="mainSiteNavBar" class="navSection w3-bar">
                 <p class="w3-left" style="padding-top: 10px; margin-left: 15%; margin-top: 0px;">Maashes Phillips</p>
                 <div style="margin-right: 15%">
                     <button id="cntct" class="navHeaderBtn w3-right">Contact</button>
@@ -111,15 +111,13 @@
             </div>
             <hr class="sectionRule">
         </div>
-        <div id="abtMainDiv" class="aboutSection w3-display-container ">
+        <div id="abtMainDiv" class="aboutSection w3-display-container">
             <div id="abtContentDiv" class="w3-container">
                 <p class="headerLabel">About</p>
                 <div id="abtInfoPanel" class="w3-cell-row">
                     <div id="abtImgDiv" class="w3-cell w3-display-container">
                         <img id="abtFaceImg" src="/img/About_Maashes+Glasses.PNG" class="w3-img">
-
                         </img>
-                      
                     </div>
                     <div id="abtInfoTextContainer" class="w3-cell">
                         <p id="abtInfoText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -150,7 +148,30 @@
                     </div>
                 </div>
             </div>
-            <hr id="bottomAbtRuleRule w3-display-bottom" class="sectionRule">
+            <hr id="w3-display-bottom" class="sectionRule">
+        </div>
+        <div id="contactMainDiv" class="contactSection w3-display-container">
+            <div id="contactContentDiv" class="w3-container">
+                <p class="headerLabel">Contact</p>
+                <div id="contactMainContainer" class="w3-container">
+                        <div id="contactSectionContainer" class="w3-cell-row">
+                            <div id="contactFormContainer" class="w3-cell">
+                                <h2 class="contactPrompt">Let's get in touch.</h3>
+                                <form class="w3-container" method="POST" action="/php/contact.php">
+                                    <input class="contactInput w3-input" type="text" name="name" placeholder="Name">
+                                    <input class="contactInput w3-input" type="text" name="email" placeholder="Email Address">
+                                    <input class="contactInput w3-input" type="text" name="subject" placeholder="Subject">
+                                    <textarea class="contactInputBlock" name="message" maxlength="2000" placeholder="Message..."></textarea>
+                                    <input class="sendButton w3-input" type="submit" name="submit" value="SEND">
+                                </form>
+                            </div>
+                            <div id="socialMediaContainer" class="w3-cell">
+                                <h2 class="contactPrompt">Social Media</h2>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <hr id="w3-display-bottom" class="sectionRule">
         </div>
         
         <script src="/js/jquery-3.4.1.js"></script>

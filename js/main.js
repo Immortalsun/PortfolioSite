@@ -33,7 +33,7 @@ $(document).ready( function(){
 
     function scrollToElement(elementId){
         $('html, body').animate({
-            scrollTop: $(elementId).offset().top
+            scrollTop: $(elementId).offset().top-50,
         }, 1500);
     }
 
@@ -42,7 +42,7 @@ $(document).ready( function(){
     buildSection(section3,2,4,5);
 
     $("#proj").click(function () {
-       scrollToElement("#prjList");
+       scrollToElement("#topPrjRule");
     });
 
     $("#abt").click(function () {
