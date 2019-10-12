@@ -435,22 +435,67 @@ h2.contactPrompt{
     color:  #f6c42b;
 }
 
+h2.socialMediaPrompt{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color:  #f6c42b;
+}
+
 input.contactInput{
-    width: 50%;
+    width: 100%;
     margin-bottom: 35px;
     max-width: 350px;
 }
 
 textarea.contactInputBlock{
-    width: 50%;
+    width: 100%;
     margin-bottom: 5px;
     height: 140px;
     max-width: 350px;
 }
 
 input.sendButton{
-    height: 40px;
+    position: relative;
+    left: 173px;
+    height: 45px;
     width: 140px;
-    align-self: stretch;
     cursor: pointer;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
 }
+
+input.sendButton:hover{
+    border: 3px solid #f6c42b;
+}
+
+#linkedInContainer{
+    position: relative;
+    height: 25px;
+    width: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#githubContainer{
+    position: relative;
+    height: 25px;
+    width: 50px;
+}
+
+a.socialLink{
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 1.3em;
+    color:  #f6c42b;
+}
+
+a.socialLink:hover{
+    color:  #f38300;
+}
+
+.error {color: #f38300;}
+
+.success {color: white;}

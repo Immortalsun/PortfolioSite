@@ -49,14 +49,24 @@ $(document).ready( function(){
       scrollToElement("#abtContentDiv");
     });
 
-    $("#cnct").click(function () {
-      
+    $("#cntct").click(function () {
+        scrollToElement("#contactMainDiv");
     });
 
     $("#closeIcon").click(function(){
         $("#showPrjPanel").fadeOut();
         $("#prjList").fadeIn();
     });
+
+    $("#contactForm").submit(function(event){
+        var formData = $("#contactForm").serializeArray(); 
+        
+        var handler =  $.post("/php/contact.php",formData,
+        function(response){
+            alert("ZUCC");
+        });
+        
+    })
 
     var tileManager = new ProjectTileManager(row0, row1);
     tileManager.ArrangeRows();

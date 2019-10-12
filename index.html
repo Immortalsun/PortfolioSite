@@ -5,7 +5,6 @@
         <link type="text/css" rel="stylesheet" href="css/custom-scrollBar.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-
     </head>
     <body>
         <div class="w3-top w3-margin-botton">
@@ -157,16 +156,24 @@
                         <div id="contactSectionContainer" class="w3-cell-row">
                             <div id="contactFormContainer" class="w3-cell">
                                 <h2 class="contactPrompt">Let's get in touch.</h3>
-                                <form class="w3-container" method="POST" action="/php/contact.php">
-                                    <input class="contactInput w3-input" type="text" name="name" placeholder="Name">
-                                    <input class="contactInput w3-input" type="text" name="email" placeholder="Email Address">
-                                    <input class="contactInput w3-input" type="text" name="subject" placeholder="Subject">
-                                    <textarea class="contactInputBlock" name="message" maxlength="2000" placeholder="Message..."></textarea>
-                                    <input class="sendButton w3-input" type="submit" name="submit" value="SEND">
+                                <form id="contactForm" class="w3-container" method="post">
+                                    <input class="contactInput w3-input requiredName" type="text" name="name" placeholder="Name">
+                                    <input class="contactInput w3-input requiredEmail" type="email" name="email" placeholder="Email Address">
+                                    <input class="contactInput w3-input subject" type="text" name="subject" placeholder="Subject">
+                                    <textarea class="contactInputBlock requiredMessage" name="message" maxlength="2000" placeholder="Message..."></textarea>
+                                    <input id="submitButton" class="sendButton w3-input" type="submit" name="submit" value="SEND">
                                 </form>
                             </div>
                             <div id="socialMediaContainer" class="w3-cell">
-                                <h2 class="contactPrompt">Social Media</h2>
+                                <h2 class="socialMediaPrompt">Social Media</h2>
+                                <div id="linkedInContainer" class="w3-cell-row">
+                                        <img src="/img/Icon_LinkedIn.png" class="w3-img w3-cell">
+                                        <a id="linkedInHyper" href="https://www.linkedin.com/in/maashes-phillips/" class="w3-cell socialLink" target="_blank">GitHub.com</a>
+                                </div>
+                                <div id="githubContainer" class="w3-cell-row">
+                                        <img src="/img/Icon_GitHub.png" class="w3-img w3-cell">
+                                        <a id="gitHubHyper" class="w3-cell socialLink" href="https://github.com/Immortalsun" target="_blank">LinkedIn.com</a>
+                                </div>
                             </div>
                         </div>
                 </div>
