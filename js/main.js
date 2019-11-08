@@ -37,6 +37,7 @@ $(document).ready( function(){
         }, 1500);
     }
 
+    
     buildSection(section1,0,0,1);
     buildSection(section2,1,2,3)
     buildSection(section3,2,4,5);

@@ -33,16 +33,54 @@ function ProjectTileManager(row0, row1) {
     }
 
     //END TILE DEFINITION
+    //UTILITY
+    function getProjectDisplayType(projId){
+        switch(projId){
+            case "m1":
+            case "s2":
+            case "s3":
+                return "STL";
+            default:
+                return "PNG";
+        }
+    }
+    //END UTILITY
     //BEGIN FUNCTIONAL DOM INTERACTION
-    function selectProjectFromTile(tileIdx,folderDir){
-        $("#showPrjPanel").find("#prjPanelImg").attr("src","../projectInfo/"+folderDir+tileIdx+"/tileImage.png");
+    function applyProjectInfoAndDisplay(tileIdx,folderDir,attachStl){
         $.getJSON("../projectInfo/mainPrj"+tileIdx+"/text.json", function(data){
             $("#prjTextTitle").text(data.title);
             $("#prjTextInfo").text(data.info);
             $("#prjTextLink").attr("href",data.link);
         });
+
+        if(!attachStl){
+            $("#showPrjPanel").find("#prjPanelImg").attr("src","../projectInfo/"+folderDir+tileIdx+"/tileImage.png");
+        }
+        else{
+            var stlParent = $("#showPrjPanel").find("#selectedPrjImg");
+            if(stlParent === undefined){
+                return;
+            }
+            attachStlViewer("../projectInfo"+folderDir+tileIdx+"/tileStl.stl");
+        }
+    }
+
+    function selectProjectFromTile(tileIdx,folderDir){
         var circleId = folderDir.substring(0,1) + tileIdx;
+        var attachStl = getProjectDisplayType(circleId) === "STL";
+        applyProjectInfoAndDisplay(tileIdx,folderDir,attachStl);
         setCircleSelected(circleId);
+    }
+
+     function attachStlViewer(stlSrc, parentElement){
+        var stlDiv = document.createElement("div");
+        stlDiv.id="stlContainer";
+        var viewer = new StlViewer(stlDiv,{
+                models:[{id:0,filename:stlSrc}],
+                canvas_width: "10%"
+            });
+        viewer.set_scale(0,4);
+        parentElement.appendChild(stlDiv);
     }
 
     function selectProjectFromCircle(circleId){
@@ -51,12 +89,8 @@ function ProjectTileManager(row0, row1) {
         if(circleId.substring(0,1)==="s"){
             folderDir ="subPrj";
         }
-        $("#showPrjPanel").find("#prjPanelImg").attr("src","../projectInfo/"+folderDir+tileIdx+"/tileImage.png");
-        $.getJSON("../projectInfo/mainPrj"+tileIdx+"/text.json", function(data){
-            $("#prjTextTitle").text(data.title);
-            $("#prjTextInfo").text(data.info);
-            $("#prjTextLink").attr("href",data.link);
-        });
+        var attachStl = getProjectDisplayType(circleId) === "STL";
+        applyProjectInfoAndDisplay(tileIdx,folderDir,attachStl);
     }
 
     function setCircleSelected(circleId){
@@ -103,6 +137,7 @@ function ProjectTileManager(row0, row1) {
     //BEGIN EVENT HANDLING SECTION
    $("#projPrev").click(function(event){
         var circIdx = getCircleIdx(false);
+        //attach stl viewer if circle id is m1, s2 or s3
         var id = $(".projCircleSelector")[circIdx].id;
         selectProjectFromCircle(id);
         setCircleSelected(id);
@@ -156,6 +191,7 @@ function ProjectTileManager(row0, row1) {
                     folderDir = "subPrj"
                 }
                 showProjectPanel();
+                //attach stl if id is main0, sub2 or sub3
                 selectProjectFromTile(tileCard.id.substring(3),folderDir);
             });
         }
@@ -188,7 +224,4 @@ function ProjectTileManager(row0, row1) {
         this.arrangeRow1();
     };
 //END ARRANGE ROWS
-
-
-
 }
