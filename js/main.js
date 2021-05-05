@@ -15,6 +15,7 @@ $(document).ready( function(){
         var projectDiv = document.createElement("div");
         projectDiv.id = "prj" + mainIdx;
         projectDiv.className = "projectCellLarge w3-col";
+        //projectDiv.addEventListener();
         $(section).find("div.mainPanelRow").append(projectDiv);
         row0.push(projectDiv);
 

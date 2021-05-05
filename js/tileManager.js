@@ -15,6 +15,7 @@ function ProjectTileManager(row0, row1) {
 
         this.attachImage = function (imgSrc) {
             var tileImg = document.createElement("img");
+            tileImg.id = "shintakunai"
             tileImg.setAttribute("src", imgSrc);
             tileImg.className = this.imgClassName;
             this.Element.appendChild(tileImg);
@@ -54,14 +55,15 @@ function ProjectTileManager(row0, row1) {
         });
 
         if(!attachStl){
-            $("#showPrjPanel").find("#prjPanelImg").attr("src","../projectInfo/"+folderDir+tileIdx+"/tileImage.png");
+            var imgEle = $("#prjPanelImg");
+            $(imgEle).attr("src", "../projectInfo/"+folderDir+tileIdx+"/tileImage.png");
         }
         else{
-            var stlParent = $("#showPrjPanel").find("#selectedPrjImg");
+            var stlParent = $("#stlViewContainer");
             if(stlParent === undefined){
                 return;
             }
-            attachStlViewer("../projectInfo"+folderDir+tileIdx+"/tileStl.stl");
+            attachStlViewer("../projectInfo/"+folderDir+tileIdx+"/tileStl.stl",stlParent);
         }
     }
 
@@ -73,14 +75,20 @@ function ProjectTileManager(row0, row1) {
     }
 
      function attachStlViewer(stlSrc, parentElement){
-        var stlDiv = document.createElement("div");
-        stlDiv.id="stlContainer";
-        var viewer = new StlViewer(stlDiv,{
-                models:[{id:0,filename:stlSrc}],
-                canvas_width: "10%"
-            });
-        viewer.set_scale(0,4);
-        parentElement.appendChild(stlDiv);
+        if($("#stlViewer")){
+            var viewer = $("#stlViewer");
+        }
+        else{
+            var stlDiv = document.createElement("div");
+            stlDiv.id="stlViewer";
+            stlDiv.className = "projDisplayElement";
+            var viewer = new StlViewer(stlDiv,{
+                    models:[{id:0,filename:stlSrc}],
+                    canvas_width: "10%"
+                });
+            viewer.set_scale(0,2);
+            parentElement.appendChild(stlDiv);
+        }
     }
 
     function selectProjectFromCircle(circleId){
