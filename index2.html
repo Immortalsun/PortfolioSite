@@ -17,7 +17,7 @@
     <script src="js/index2.js"></script>
     <script src="js/threejs/three.js-master/build/three.js"></script> <!--threejs library for displaying 3D stl files-->
     <script src="js/threejs/three.js-master/examples/js/loaders/STLLoader.js"></script><!--Handles .stl model files-->
-    <script src="js/threejs/three.js-master/examples/js/controls/OrbitControls.js"></script>
+    <script src="js/threejs/three.js-master/examples/js/controls/OrbitControls.js"></script><!--Handles the camera rotating around 3d models-->
 </head>
 <body>
     <div id="page-container">
@@ -99,18 +99,18 @@
             <div class="section-label">PROJECTS</div>
             <div class="projects-section-item">
                 <div id="project1" class="projects-image-main"></div>
-                <div class="projects-image-subLeft"></div>
-                <div class="projects-image-subRight"></div>
+                <div id="p1-subLeft" class="projects-image-subLeft"></div>
+                <div id="p1-subRight" class="projects-image-subRight"></div>
             </div>
             <div class="projects-section-item">
                 <div id="project2" class="projects-image-main"></div>
-                <div class="projects-image-subLeft"></div>
-                <div class="projects-image-subRight"></div>
+                <div id="p2-subLeft" class="projects-image-subLeft"></div>
+                <div id="p2-subRight" class="projects-image-subRight"></div>
             </div>
             <div class="projects-section-item">
                 <div id="project3" class="projects-image-main"></div>
-                <div class="projects-image-subLeft"></div>
-                <div class="projects-image-subRight"></div>
+                <div id="p3-subLeft" class="projects-image-subLeft"></div>
+                <div id="p3-subRight" class="projects-image-subRight"></div>
             </div>
             <div class="section-seperator-line"></div>
         </div>
@@ -250,6 +250,22 @@
         </div>
     </div>
 
-    <script src="js/projects3dControl.js"></script>
+    <script src="js/display3d.js"></script>
+    <script>
+        //Load in main project models
+        setUpStaticDisplay("project1",'stl/Gripper Mechanism Coverv1.2.stl', true);
+        setUpStaticDisplay("project2",'stl/NEMA 8 Sleeve Mountv1.0.stl', true);
+        setUpStaticDisplay("project3",'stl/LCD Stand V3.0.stl', true);
+
+        //Load in subproject models
+        setUpStaticDisplay("p1-subLeft",'stl/Gripper Mechanism Coverv1.2.stl', true);
+        setUpStaticDisplay("p1-subRight",'stl/Gripper Mechanism Coverv1.2.stl', true);
+        setUpStaticDisplay("p2-subLeft",'stl/Gripper Mechanism Coverv1.2.stl', true);
+        setUpStaticDisplay("p2-subRight",'stl/Gripper Mechanism Coverv1.2.stl', true);
+        setUpStaticDisplay("p3-subLeft",'stl/Gripper Mechanism Coverv1.2.stl', true);
+        setUpStaticDisplay("p3-subRight",'stl/Gripper Mechanism Coverv1.2.stl', true);
+
+        animate();
+    </script>
 </body>
 </html>
