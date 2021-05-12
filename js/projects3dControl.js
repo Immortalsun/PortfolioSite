@@ -118,7 +118,7 @@ function init()
         //Called if there is an error when loading
         function (error)
         {
-            console.log("An error has occured when loading the 3d object resource.");
+            console.log("An error has occurred when loading the 3d object resource.");
         }
     );
     //MODEL2--MODEL2--MODEL2--MODEL2--MODEL2--MODEL2--MODEL2--MODEL2--MODEL2--MODEL2--MODEL2--MODEL2
