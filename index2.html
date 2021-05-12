@@ -12,8 +12,12 @@
     <!--Use this to specify the family:-->
     <!--font-family: 'Ubuntu', sans-serif;-->
 
+    <!--Linkages-->
     <link rel="stylesheet" href="css/index2.css">
     <script src="js/index2.js"></script>
+    <script src="js/threejs/three.js-master/build/three.js"></script> <!--threejs library for displaying 3D stl files-->
+    <script src="js/threejs/three.js-master/examples/js/loaders/STLLoader.js"></script><!--Handles .stl model files-->
+    <script src="js/threejs/three.js-master/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
     <div id="page-container">
@@ -94,17 +98,17 @@
         <div id="projects-section">
             <div class="section-label">PROJECTS</div>
             <div class="projects-section-item">
-                <div class="projects-image-main"></div>
+                <div id="project1" class="projects-image-main"></div>
                 <div class="projects-image-subLeft"></div>
                 <div class="projects-image-subRight"></div>
             </div>
             <div class="projects-section-item">
-                <div class="projects-image-main"></div>
+                <div id="project2" class="projects-image-main"></div>
                 <div class="projects-image-subLeft"></div>
                 <div class="projects-image-subRight"></div>
             </div>
             <div class="projects-section-item">
-                <div class="projects-image-main"></div>
+                <div id="project3" class="projects-image-main"></div>
                 <div class="projects-image-subLeft"></div>
                 <div class="projects-image-subRight"></div>
             </div>
@@ -245,5 +249,7 @@
             </div>
         </div>
     </div>
+
+    <script src="js/projects3dControl.js"></script>
 </body>
 </html>
