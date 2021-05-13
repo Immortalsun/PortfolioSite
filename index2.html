@@ -18,6 +18,7 @@
     <script src="js/threejs/three.js-master/build/three.js"></script> <!--threejs library for displaying 3D stl files-->
     <script src="js/threejs/three.js-master/examples/js/loaders/STLLoader.js"></script><!--Handles .stl model files-->
     <script src="js/threejs/three.js-master/examples/js/controls/OrbitControls.js"></script><!--Handles the camera rotating around 3d models-->
+    <script src="js/modal-control.js"></script><!--Handles the opening and closing of the 3D display modal-->
 </head>
 <body>
     <div id="page-container">
@@ -112,6 +113,18 @@
                 <div id="p3-subLeft" class="projects-image-subLeft"></div>
                 <div id="p3-subRight" class="projects-image-subRight"></div>
             </div>
+
+            <div id="projects-modal-opener" onclick="openModal()"></div>
+            <div id="projects-modal">
+                <div id="projects-modal-content">
+                    <div id="projects-modal-arrow-right" onclick="nextModel('right')"><img src="images/Arrow_Right.png" alt="rightArrow"></div>
+                    <div id="projects-modal-arrow-left" onclick="nextModel('left')"><img src="images/Arrow_Left.png" alt="leftArrow"></div>
+                    <div id="projects-modal-close">
+                        <img src="images/closeButton.png" alt="closeButton" onclick="closeModal();">
+                    </div>
+                </div>
+            </div>
+
             <div class="section-seperator-line"></div>
         </div>
 
@@ -254,18 +267,20 @@
     <script>
         //Load in main project models
         setUpStaticDisplay("project1",'stl/Gripper Mechanism Coverv1.2.stl', true);
-        setUpStaticDisplay("project2",'stl/NEMA 8 Sleeve Mountv1.0.stl', true);
-        setUpStaticDisplay("project3",'stl/LCD Stand V3.0.stl', true);
+        setUpStaticDisplay("project2",'stl/LID_V5.stl', true);
+        setUpStaticDisplay("project3",'stl/WristMountv1.0.stl', true);
 
         //Load in subproject models
-        setUpStaticDisplay("p1-subLeft",'stl/Gripper Mechanism Coverv1.2.stl', true);
-        setUpStaticDisplay("p1-subRight",'stl/Gripper Mechanism Coverv1.2.stl', true);
-        setUpStaticDisplay("p2-subLeft",'stl/Gripper Mechanism Coverv1.2.stl', true);
-        setUpStaticDisplay("p2-subRight",'stl/Gripper Mechanism Coverv1.2.stl', true);
-        setUpStaticDisplay("p3-subLeft",'stl/Gripper Mechanism Coverv1.2.stl', true);
-        setUpStaticDisplay("p3-subRight",'stl/Gripper Mechanism Coverv1.2.stl', true);
+        setUpStaticDisplay("p1-subLeft",'stl/Central Bearing Attach Mountv2.0.stl', true);
+        setUpStaticDisplay("p1-subRight",'stl/Central Bearing Mountv2.0.stl', true);
+        setUpStaticDisplay("p2-subLeft",'stl/Coupling platev1.0.stl', true);
+        setUpStaticDisplay("p2-subRight",'stl/LCD Stand V3.0.stl', true);
+        setUpStaticDisplay("p3-subLeft",'stl/Main Base Drumv3.stl', true);
+        setUpStaticDisplay("p3-subRight",'stl/NEMA 8 Sleeve Mountv1.0.stl', true);
 
         animate();
+
+        modalInit();
     </script>
 </body>
 </html>
