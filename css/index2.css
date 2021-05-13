@@ -427,3 +427,177 @@ body
     color: #1f3c0d;
     font-size: 1.5em;
 }
+
+#projects-modal
+{
+    display: none;
+
+    z-index: 1000;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+
+    background-color: #424341;
+}
+#projects-modal-content
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 90%;
+    height: 90%;
+}
+#projects-modal-arrow-right
+{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+
+    width: 10%;
+    padding-top: 10%;
+}
+#projects-modal-arrow-left
+{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+
+    width: 10%;
+    padding-top: 10%;
+}
+#projects-modal-arrow-right>img
+{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#projects-modal-arrow-left>img
+{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#projects-modal-close
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 5%;
+    padding-top: 5%;
+}
+#projects-modal-close>img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width:80%;
+    height: 80%;
+}
+#projects-modal-opener
+{
+    z-index: 500;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/*This section is for media queries, to resize the site for mobile visitors*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+@media only screen and (max-width: 425px)
+{
+    /*SHRINK ALL FONTS*/
+    #page-container
+    {
+        font-size: 10px;
+    }
+
+    /*NAVIGATION BAR*/
+    #header-left-item
+    {
+        display: none;
+    }
+    #header-center-item
+    {
+        display: none;
+    }
+    #header-bar
+    {
+        grid-template-columns: 1fr;
+        height: 4%;
+    }
+    #header-bar-underline
+    {
+        top: 4%;
+    }
+    #header-button-container
+    {
+        min-width: 100px;
+        width: 100%;
+        font-size: 1.5em;
+    }
+
+    /*MAIN DESCRIPTION*/
+    #main-description-text
+    {
+        width: 80%;
+        font-size: 1.6em;
+    }
+
+    /*PROJECTS SECTION*/
+    #projects-section
+    {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 1.6%;
+        padding-bottom: 1.6%;
+        height: 195%;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        row-gap: 0.3333%;
+    }
+
+    /*ABOUT SECTION*/
+    #about-content
+    {
+        width: 90%;
+        grid-template-columns: 0.5fr 3fr;
+        grid-template-rows: 5fr 1fr;
+        font-size: 1.25em;
+    }
+    /*CONTACT SECTION*/
+    #contact-section
+    {
+        display: none;
+    }
+
+    /*GENERAL CONTENT*/
+    .section-label
+    {
+        top: 0.5%;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+}
